@@ -18,7 +18,7 @@ export class WebSocketGatewayTest  implements OnGatewayInit, OnGatewayConnection
 
   afterInit(server: any) {
       console.log("inicia el webSocket");
-      this.emitData()
+      //this.emitData()
   }
   handleConnection(client: any, ...args: any[]) {
       console.log("alguien se conecto al socket");
@@ -30,9 +30,10 @@ export class WebSocketGatewayTest  implements OnGatewayInit, OnGatewayConnection
 
 
   emitData() {
+    let count = 0;
     setInterval(() => {
         console.log("EMIT DATA");
-        this.server.emit('data', { message: 'Datos enviados cada 2 segundos' });
+        this.server.emit('data', { message: `contador = ${count++}`});
     }, 2000);
   }
 }
