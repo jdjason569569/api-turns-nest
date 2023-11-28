@@ -3,28 +3,20 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn
 } from 'typeorm';
 
 
 @Entity()
 export class Turn {
   @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column({ default: false })
-  completed: boolean;
+  id_turn: number;
 
   @Column()
-  date_register: Date;
-
-  date_register_string: string;
+  identification: number;
 
   @Column()
-  order: number;
+  name: number;
 
-  @Column({ default: false })
-  isSchedule: boolean;
+  
 
 }

@@ -13,7 +13,7 @@ export class TurnService {
     @InjectRepository(Turn) private turnRepo: Repository<Turn>,
   ) {}
 
-  async create(body: Turn, method: string) {
+  async create(body: Turn) {
     return this.turnRepo.save(body);
   }
 
